@@ -72,14 +72,12 @@ func (h *handlerAuth) Register(c echo.Context) error {
 
 	// RESPONSE BODY KETIKA LOGIN
 	registerResponse := authdto.RegisterResponse{
-		// Name:     user.FullName,
 		Email: data.Email,
 		Token: token,
 	}
 	// =====================================================================
 
 	return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusOK, Data: registerResponse})
-	// return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusOK, Data: data})
 }
 
 func (h *handlerAuth) Login(c echo.Context) error {
@@ -106,7 +104,7 @@ func (h *handlerAuth) Login(c echo.Context) error {
 		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: "wrong email or password"})
 	}
 
-	//generate token
+	// Generate token
 	claims := jwt.MapClaims{}
 	claims["id"] = user.ID
 	claims["exp"] = time.Now().Add(time.Hour * 2).Unix() // 2 hours expired
@@ -119,7 +117,6 @@ func (h *handlerAuth) Login(c echo.Context) error {
 
 	// RESPONSE BODY KETIKA LOGIN
 	loginResponse := authdto.LoginResponse{
-		// Name:     user.FullName,
 		Email: user.Email,
 		Token: token,
 	}

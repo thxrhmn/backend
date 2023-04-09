@@ -2,7 +2,6 @@ package models
 
 import "time"
 
-// User model struct
 type User struct {
 	ID        int       `json:"id"`
 	FullName  string    `json:"fullname" gorm:"type: varchar(255)"`

@@ -51,35 +51,6 @@ func (h *handlerFilm) GetFilm(c echo.Context) error {
 }
 
 func (h *handlerFilm) CreateFilm(c echo.Context) error {
-
-	// request := new(filmdto.CreateFilmRequest)
-	// if err := c.Bind(request); err != nil {
-	// 	return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
-	// }
-
-	// validation := validator.New()
-	// err := validation.Struct(request)
-	// if err != nil {
-	// 	return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
-	// }
-
-	// // data form pattern submit to pattern entity db user
-	// film := models.Films{
-	// 	Title:         request.Title,
-	// 	ThumbnailFilm: request.ThumbnailFilm,
-	// 	Year:          request.Year,
-	// 	Category:      request.Category,
-	// 	CategoryID:    request.CategoryID,
-	// 	Description:   request.Description,
-	// }
-
-	// data, err := h.FilmRepository.CreateFilm(film)
-	// if err != nil {
-	// 	return c.JSON(http.StatusInternalServerError, dto.ErrorResult{Code: http.StatusInternalServerError, Message: err.Error()})
-	// }
-
-	// return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusOK, Data: data})
-
 	// get the datafile here
 	dataFile := c.Get("dataFile").(string)
 	fmt.Println("this is data file", dataFile)
@@ -111,7 +82,6 @@ func (h *handlerFilm) CreateFilm(c echo.Context) error {
 		Year:          request.Year,
 		CategoryID:    request.CategoryID,
 		Description:   request.Description,
-		// UserID:        int(userId),
 	}
 
 	film, err = h.FilmRepository.CreateFilm(film)
