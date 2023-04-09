@@ -1,0 +1,43 @@
+TASK 1 register is DONE
+TASK 2 login is DONE 
+--------------------------------------------
+TASK 3 USER:
+-get all user is DONE
+-get specific user is DONE
+-update user is DONE
+-delete user is DONE
+--------------------------------------------
+middleware is DONE
+--------------------------------------------
+TASK 4 FILM:
+-get all film is DONE
+-get specific film is DONE
+-delete film is DONE
+-update film X
+-create film X
+--------------------------------------------
+TASK 5 CATEGORY:
+-get all category is DONE
+-get specific category is DONE
+-create category is DONE
+-update category is DONE
+-delete category is DONE
+-relasi masih ada bug
+--------------------------------------------
+TASK 6 TRANSACTION:
+-get all transaction is DONE
+-get specific transaction is DONE
+-create transaction is DONE
+-update transaction is DONE
+-delete transaction is DONE
+-relasi BELUM
+--------------------------------------------
+TASK 7 EPISODE:
+-get all episode is DONE
+-get specific episode is DONE
+-create episode is DONE
+-update episode is DONE
+-delete episode is DONE
+-relasi BELUM
+
+

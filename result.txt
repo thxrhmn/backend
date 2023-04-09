@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------------------------
+GET ALL USER
+localhost:5000/users
+
+[
+  {
+    "id": "1",
+    "fullname": "Iis Is",
+    "email": "iis@gmail.com",
+    "password": "lovespIderman",
+    "gender": "male",
+    "phone": "083896831233",
+    "address": "Jln. Marvel Universe, RT.21 RW.69",
+    "subscribe": true
+  },
+  {
+    "id": "2",
+    "fullname": "Jib Ajib",
+    "email": "jib@gmail.com",
+    "password": "jibajibajib",
+    "gender": "male",
+    "phone": "083896831232",
+    "address": "Jln. Marvel Universe, RT.30 RW.66",
+    "subscribe": false
+  },
+  {
+    "id": "3",
+    "fullname": "Lislis",
+    "email": "lis@gmail.com",
+    "password": "lilislilis",
+    "gender": "male",
+    "phone": "083896831231",
+    "address": "Jln. Marvel Universe, RT.30 RW.80",
+    "subscribe": true
+  }
+]
+---------------------------------------------------------------------------------------------------
+GET SPECIFIK USER
+localhost:5000/user/1
+{
+  "id": "1",
+  "fullname": "Iis Is",
+  "email": "iis@gmail.com",
+  "password": "lovespIderman",
+  "gender": "male",
+  "phone": "083896831233",
+  "address": "Jln. Marvel Universe, RT.21 RW.69",
+  "subscribe": true
+}
+---------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------

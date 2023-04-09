@@ -1,0 +1,19 @@
+Fungsi RunMigration() digunakan untuk melakukan migrasi basis data dengan menggunakan model User menggunakan fungsi AutoMigrate() dari objek mysql.DB pada bahasa pemrograman Golang. Migrasi basis data adalah proses pembaruan skema basis data ke versi yang lebih baru atau penerapan perubahan pada skema yang sudah ada.
+
+Jika proses migrasi gagal, fungsi akan mencetak pesan kesalahan ke konsol dan kemudian menghentikan program dengan pesan "Migration Failed". Fungsi panic() akan menghentikan eksekusi program seketika.
+
+Jika proses migrasi berhasil, fungsi akan mencetak pesan "Migration Success" ke konsol.
+----------------------------------------------------------------------------------------------------
+Kode Golang tersebut mendefinisikan sebuah tipe data baru yang disebut SuccessResult. Tipe data ini memiliki dua field yaitu Code dan Data yang masing-masing memiliki tipe data int dan interface{}.
+
+Field Code digunakan untuk menyimpan kode status atau kode error yang terkait dengan respons yang dikembalikan. Sedangkan field Data digunakan untuk menyimpan data yang berkaitan dengan respons yang dikembalikan.
+
+Adapun tag json yang digunakan pada masing-masing field digunakan untuk menentukan nama kunci atau key pada saat data di-encode menjadi format JSON. Pada field Code, nama kunci atau key yang digunakan pada JSON adalah code, sedangkan pada field Data, nama kunci atau key yang digunakan pada JSON adalah data.
+
+Dalam contoh kode tersebut, Data memiliki tipe data interface{}. Hal ini berarti bahwa Data dapat menyimpan nilai dari berbagai jenis tipe data, seperti string, angka, objek, dan sebagainya. Pada saat penggunaan, tipe data Data harus di-casting terlebih dahulu ke tipe data yang sesuai untuk dapat mengakses nilainya secara benar.
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
