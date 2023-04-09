@@ -95,7 +95,7 @@ func (h *handler) UpdateUser(c echo.Context) error {
 	if request.Email != "" {
 		user.Email = request.Email
 	}
-	
+
 	if request.Password != "" {
 		user.Password = password
 	}
@@ -108,10 +108,18 @@ func (h *handler) UpdateUser(c echo.Context) error {
 		user.Phone = request.Phone
 	}
 
+	if request.Subscribe != false {
+		user.Subscribe = request.Subscribe
+	}
+
+	if request.Subscribe != true {
+		user.Subscribe = request.Subscribe
+	}
+
 	if request.Address != "" {
 		user.Address = request.Address
 	}
-	
+
 	data, err := h.UserRepository.UpdateUser(user)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, dto.ErrorResult{Code: http.StatusInternalServerError, Message: err.Error()})
