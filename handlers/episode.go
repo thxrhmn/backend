@@ -21,6 +21,35 @@ func HandlerEpisode(EpisodeRepository repositories.EpisodeRepository) *handlerEp
 	return &handlerEpisode{EpisodeRepository}
 }
 
+func (h *handlerEpisode) FindEpisodesByFilm(c echo.Context) error {
+	film_id, _ := strconv.Atoi(c.Param("film_id"))
+	episodes, err := h.EpisodeRepository.FindEpisodesByFilm(film_id)
+
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
+	}
+
+	for i, m := range episodes {
+		episodes[i].ThumbnailFilm = path_file + m.ThumbnailFilm
+	}
+
+	return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusOK, Data: episodes})
+}
+
+func (h *handlerEpisode) GetEpisodeByFilm(c echo.Context) error {
+	film_id, _ := strconv.Atoi(c.Param("film_id"))
+	episode_id, _ := strconv.Atoi(c.Param("episode_id"))
+
+	episode, err := h.EpisodeRepository.GetEpisodeByFilm(film_id, episode_id)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
+	}
+
+	episode.ThumbnailFilm = path_file + episode.ThumbnailFilm
+
+	return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusOK, Data: episode})
+}
+
 func (h *handlerEpisode) FindEpisodes(c echo.Context) error {
 	episodes, err := h.EpisodeRepository.FindEpisodes()
 	if err != nil {

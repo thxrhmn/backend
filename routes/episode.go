@@ -13,8 +13,8 @@ func EpisodeRoute(e *echo.Group) {
 	episodeRepository := repositories.RepositoryEpisode(mysql.DB)
 	h := handlers.HandlerEpisode(episodeRepository)
 
-	e.GET("/film/:id/episodes", h.FindEpisodes)
-	e.GET("/film/:id/episode/:id", h.GetEpisode)
+	e.GET("/film/:film_id/episodes", h.FindEpisodesByFilm)
+	e.GET("/film/:film_id/episode/:episode_id", h.GetEpisodeByFilm)
 	e.POST("/episode", middleware.Auth(middleware.UploadFile(h.CreateEpisode)))
 	e.PATCH("/episode/:id", middleware.Auth(h.UpdateEpisode))
 	e.DELETE("/episode/:id", middleware.Auth(h.DeleteEpisode))
